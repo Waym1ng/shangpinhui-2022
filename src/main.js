@@ -5,6 +5,9 @@ import TypeNav from '@/pages/Home/TypeNav'
 // 三级联动全局组件
 Vue.component(TypeNav.name, TypeNav)
 
+import {reqCategoryList} from '@/api';
+reqCategoryList();
+
 Vue.config.productionTip = false
 
 new Vue({
