@@ -34,6 +34,7 @@
       <div class="searchArea">
         <form action="###" class="searchForm">
           <input
+            v-model="keyword"
             type="text"
             id="autocomplete"
             class="input-error input-xxlarge"
@@ -54,9 +55,21 @@
 <script>
 export default {
   name: "",
+  data() {
+    return {
+      keyword: "",
+    }
+  },
   methods: {
     goSearch() {
-      this.$router.push("/search");
+      // this.$router.push(`/search/${this.keyword}?k=${this.keyword.toUpperCase()}`);
+      this.$router.push({
+        name: "search",
+        params: { keyword: this.keyword },
+        query: {
+          k: this.keyword.toUpperCase()
+        }
+      });
     },
   },
 };
