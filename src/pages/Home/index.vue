@@ -19,17 +19,17 @@ import Like from "@/pages/Home/Like";
 import Floor from "@/pages/Home/Floor";
 import Brand from "@/pages/Home/Brand";
 export default {
-  name: "Home",
+  name: "",
   components: {
     ListContainer,
     Recommend,
+    Rank,
     Like,
     Floor,
     Brand,
-  }
-}
+  },
+};
 </script>
 
 <style>
-
 </style>
