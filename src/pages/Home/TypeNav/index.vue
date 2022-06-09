@@ -54,6 +54,8 @@
 
 <script>
 import { mapState } from "vuex";
+import throttle from "lodash/throttle";
+
 export default {
   name: "TypeNav",
   data() {
@@ -71,9 +73,10 @@ export default {
     }),
   },
   methods: {
-    changeIndex(index) {
+    changeIndex: throttle(function (index) {
+      // throttle 节流函数：每100毫秒只能触发一次
       this.currentIndex = index;
-    },
+    }, 100),
     leaveIndex() {
       this.currentIndex = -1;
     }
